@@ -12,7 +12,7 @@ https://mooyoul.github.io/geo-pattern/
 ## Getting Started
 
 ```bash
-$ npm install @prescott/geo-pattern --save
+$ npm install hcb-geo-pattern --save
 ```
 
 ## API
