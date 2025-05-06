@@ -9,11 +9,14 @@ import { SVGNode } from "../svg";
 
 export class SolidBackgroundComposer implements PatternComposer {
   private readonly color: Color;
+  private readonly grayScale?: boolean;
 
   public constructor(
     private readonly seed: Seed,
     private readonly preset: ColorPreset,
+    grayScale?: boolean,
   ) {
+    this.grayScale = grayScale;
     this.color = this.selectColor(seed, preset);
   }
 
@@ -38,9 +41,8 @@ export class SolidBackgroundComposer implements PatternComposer {
 
   private selectColor(seed: Seed, preset: ColorPreset) {
     const generator = preset.mode === ColorPresetMode.BaseColor ?
-      new BaseColorGenerator(preset.baseColor!, seed) :
+      new BaseColorGenerator(preset.baseColor!, seed, this.grayScale) :
       new SimpleColorGenerator(preset!.color!);
-
     return generator.generate();
   }
 }

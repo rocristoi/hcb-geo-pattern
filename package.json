@@ -1,6 +1,6 @@
 {
-  "name": "@prescott/geo-pattern",
-  "version": "1.0.1",
+  "name": "hcb-geo-pattern",
+  "version": "1.0.0",
   "description": "Create beautiful generative geometric background images from a string.",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -72,7 +72,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mooyoul/geo-pattern.git"
+    "url": "git+https://github.com/rocristoi/hcb-geo-pattern.git"
   },
   "keywords": [
     "image",
@@ -81,27 +81,13 @@
     "geo-pattern",
     "geopattern",
     "design",
-    "background"
+    "background",
+    "HCB"
   ],
-  "author": "MooYeol Prescott Lee <mooyoul@gmail.com>",
+  "author": "Capota Cristian <cristi@cristoi.ro>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mooyoul/geo-pattern/issues"
+    "url": "https://github.com/rocristoi/hcb-geo-pattern/issues"
   },
-  "homepage": "https://github.com/mooyoul/geo-pattern#readme",
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@prescott/commitlint-preset"
-    ]
-  }
+  "homepage": "https://github.com/rocristoi/hcb-geo-pattern#readme"
 }

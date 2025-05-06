@@ -13,12 +13,14 @@ export interface PatternGeneratorParams {
   patterns?: string[];
   color?: string;
   baseColor?: string;
+  grayScale?: boolean; 
 }
 
 export class PatternGenerator {
   public readonly seed: Seed;
   public readonly color: ColorPreset;
   public readonly preset: PatternPreset;
+  public readonly grayScale?: boolean;
 
   public readonly backgroundComposer: PatternComposer;
   public readonly structureComposer: PatternComposer;
@@ -41,7 +43,7 @@ export class PatternGenerator {
         max: 0.15,
       },
     };
-
+    this.grayScale = params.grayScale;
     this.color = new ColorPreset("#933c3c");
     if (params.color) {
       this.color.color = params.color;
@@ -58,7 +60,7 @@ export class PatternGenerator {
     const structureSelector = new PatternSelector(requestedPatterns, this.seed);
     const SelectedStructure = structureSelector.select();
 
-    this.backgroundComposer = new SolidBackgroundComposer(this.seed, this.color);
+    this.backgroundComposer = new SolidBackgroundComposer(this.seed, this.color, this.grayScale);
     this.structureComposer = new SelectedStructure(this.seed, this.preset);
   }
 

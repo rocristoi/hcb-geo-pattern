@@ -5,10 +5,15 @@ import { Seed } from "../seed";
 import { ColorGenerator } from "./base";
 
 export class BaseColorGenerator implements ColorGenerator {
+  private readonly grayScale?: boolean;
+
   public constructor(
     private readonly color: string,
     private readonly seed: Seed,
-  ) {}
+    grayScale?: boolean
+  ) {
+    this.grayScale = grayScale;
+  }
 
   public generate() {
     return this.transform(this.color, this.seed);
@@ -24,7 +29,13 @@ export class BaseColorGenerator implements ColorGenerator {
     newColor = satOffset % 2 === 0 ?
       newColor.saturationl(newColor.saturationl() + satOffset) :
       newColor.saturationl(newColor.saturationl() - satOffset);
-
-    return newColor.rgb();
+      if (this.grayScale) {
+        const rgbObj = newColor.rgb().object();
+        const avg = (rgbObj.r * 0.30 + rgbObj.g * 0.59 + rgbObj.b * 0.11);
+        const grayColor = Color.rgb(avg, avg, avg);
+        return grayColor.rgb();
+      } else {
+        return newColor.rgb();
+      }
   }
 }

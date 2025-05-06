@@ -74,3 +74,6 @@ BrowserStackLocal*
 /browser
 /types
 /output
+
+# Mac system files
+.DS_Store

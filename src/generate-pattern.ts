@@ -6,6 +6,7 @@ export interface GeneratePatternParams {
   patterns?: string[];
   color?: string;
   baseColor?: string;
+  grayScale?: boolean;
 }
 
 export async function generatePattern(params: GeneratePatternParams, adapter: Adapter) {
@@ -16,8 +17,8 @@ export async function generatePattern(params: GeneratePatternParams, adapter: Ad
     patterns: params.patterns,
     color: params.color,
     baseColor: params.baseColor,
+    grayScale: params.grayScale,
   });
-
   return await generator.generate();
 }
 
