@@ -13,14 +13,14 @@ export interface PatternGeneratorParams {
   patterns?: string[];
   color?: string;
   baseColor?: string;
-  grayScale?: boolean; 
+  grayScale?: number; 
 }
 
 export class PatternGenerator {
   public readonly seed: Seed;
   public readonly color: ColorPreset;
   public readonly preset: PatternPreset;
-  public readonly grayScale?: boolean;
+  public readonly grayScale?: number;
 
   public readonly backgroundComposer: PatternComposer;
   public readonly structureComposer: PatternComposer;

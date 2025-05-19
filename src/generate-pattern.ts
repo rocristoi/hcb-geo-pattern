@@ -6,7 +6,7 @@ export interface GeneratePatternParams {
   patterns?: string[];
   color?: string;
   baseColor?: string;
-  grayScale?: boolean;
+  grayScale?: number;
 }
 
 export async function generatePattern(params: GeneratePatternParams, adapter: Adapter) {

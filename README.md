@@ -25,7 +25,7 @@ interface GeneratePatternParams {
   patterns?: string[];
   color?: string;
   baseColor?: string;
-  grayscale?: boolean;
+  grayscale?: number;
 }
 
 interface Pattern {

@@ -9,12 +9,12 @@ import { SVGNode } from "../svg";
 
 export class SolidBackgroundComposer implements PatternComposer {
   private readonly color: Color;
-  private readonly grayScale?: boolean;
+  private readonly grayScale?: number;
 
   public constructor(
     private readonly seed: Seed,
     private readonly preset: ColorPreset,
-    grayScale?: boolean,
+    grayScale?: number,
   ) {
     this.grayScale = grayScale;
     this.color = this.selectColor(seed, preset);
